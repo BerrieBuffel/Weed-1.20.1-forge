@@ -1,6 +1,7 @@
 package net.berriebuffel.weedmod;
 
 import com.mojang.logging.LogUtils;
+import net.berriebuffel.weedmod.item.ModCreativeModeTabs;
 import net.berriebuffel.weedmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTab;
@@ -33,6 +34,8 @@ public class WeedMod
     public WeedMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
@@ -56,10 +59,7 @@ public class WeedMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-        {
-            event.accept(ModItems.WEED);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

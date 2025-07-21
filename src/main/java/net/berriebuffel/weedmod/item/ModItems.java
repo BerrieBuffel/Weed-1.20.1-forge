@@ -13,6 +13,7 @@ public class ModItems
             DeferredRegister.create(ForgeRegistries.ITEMS, WeedMod.MOD_ID);
 
     public static final RegistryObject<Item> WEED = ITEMS.register("weed", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WEED_SEEDS = ITEMS.register("weed_seeds", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {
