@@ -1,6 +1,7 @@
 package net.berriebuffel.weedmod;
 
 import com.mojang.logging.LogUtils;
+import net.berriebuffel.weedmod.block.ModBlocks;
 import net.berriebuffel.weedmod.item.ModCreativeModeTabs;
 import net.berriebuffel.weedmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -36,7 +37,9 @@ public class WeedMod
         IEventBus modEventBus = context.getModEventBus();
 
         ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
